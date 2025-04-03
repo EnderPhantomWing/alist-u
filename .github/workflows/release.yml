@@ -79,9 +79,9 @@ jobs:
 
       - name: Add tag
         run: |
-          git config --local user.email "bot@nn.ci"
-          git config --local user.name "IlaBot"
-          version=$(wget -qO- -t1 -T2 "https://api.github.com/repos/alist-org/alist/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g')
+          git config --local user.email "ccbep@outlook.com"
+          git config --local user.name "EnderPhantomWing"
+          version=$(wget -qO- -t1 -T2 "https://api.github.com/repos/EnderPhantomWing/alist-u/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g')
           git tag -a $version -m "release $version"
 
       - name: Push tags
@@ -89,4 +89,4 @@ jobs:
         with:
           github_token: ${{ secrets.MY_TOKEN }}
           branch: main
-          repository: alist-org/desktop-release
+          repository: EnderPhantomWing/desktop-release
